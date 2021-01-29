@@ -6,7 +6,6 @@ FROM node:12-alpine3.10 AS server-build
 # Create app directory
 WORKDIR /app/backend_node
 RUN npm install -g nodemon
-
 COPY ./ ./
 RUN ls 
 
