@@ -1,0 +1,23 @@
+version: '2.0'
+services:
+  nodejs-server:
+    restart: always
+    build:
+      context: ./backend_node
+    ports:
+      - "8000:8000"
+    container_name: node-api
+    volumes:
+       - ./backend_node:/app/backend_node
+       - /app/backend_node/node_modules
+  react-ui:
+    restart: always
+    build:
+      context: ./clarity_ui 
+    ports:
+      - "3000:3000"
+    container_name: react-ui
+    stdin_open: true
+    volumes:
+       - ./clarity_ui:/app/clarity_ui
+       - /app/clarity_ui/node_modules
