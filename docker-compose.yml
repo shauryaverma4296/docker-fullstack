@@ -1,4 +1,4 @@
-version: '2.0'
+version: "2.0"
 services:
   nodejs-server:
     restart: always
@@ -8,10 +8,10 @@ services:
       - "8000:8000"
     container_name: node-api
     volumes:
-       - ./backend_node:/app/backend_node
-       - /app/backend_node/node_modules
+      - ./backend_node:/app/backend_node
+      - /app/backend_node/node_modules
     depends_on:
-       - mongo
+      - mongo
   mongo:
     image: mongo
     ports:
@@ -19,11 +19,11 @@ services:
   react-ui:
     restart: always
     build:
-      context: ./clarity_ui 
+      context: ./clarity_ui
     ports:
       - "3000:3000"
     container_name: react-ui
     stdin_open: true
     volumes:
-       - ./clarity_ui:/app/clarity_ui
-       - /app/clarity_ui/node_modules
+      - ./clarity_ui:/app/clarity_ui
+      - /app/clarity_ui/node_modules
