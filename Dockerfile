@@ -5,9 +5,9 @@
 # WORKDIR /app
 # # ENV PATH /app/node_modules/.bin:$PATH
 # # COPY package.json ./
-# COPY clarity_ui/ ./clarity_ui/
+# COPY ui/ ./ui/
 
-# RUN cd clarity_ui && npm install && npm run build 
+# RUN cd ui && npm install && npm run build 
 
 # # COPY . ./
 
@@ -22,7 +22,7 @@
 
 # # Create app directory
 # WORKDIR /app
-# COPY --from=ui-build /app/clarity_ui/build ./clarity_ui/build
+# COPY --from=ui-build /app/ui/build ./ui/build
 # COPY backend_node/ ./backend_node/
 # RUN cd ../backend_node && npm install
 # RUN cd app/backend_node

@@ -15,15 +15,15 @@ services:
   mongo:
     image: mongo
     ports:
-      - "27017:27017"
+      - "27018:27017"
   react-ui:
     restart: always
     build:
-      context: ./clarity_ui
+      context: ./ui
     ports:
       - "3000:3000"
     container_name: react-ui
     stdin_open: true
     volumes:
-      - ./clarity_ui:/app/clarity_ui
-      - /app/clarity_ui/node_modules
+      - ./ui:/app/ui
+      - /app/ui/node_modules

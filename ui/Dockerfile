@@ -3,7 +3,7 @@
 
 FROM node:12-alpine3.10
 
-WORKDIR /app/clarity_ui
+WORKDIR /app/ui
 
 # ENV PATH /app/ui/node_modules/.bin:$PATH
 
